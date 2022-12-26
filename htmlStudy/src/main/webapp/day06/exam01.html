@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="이부분은 현재페이지의 가장 중요한 키워드8개 정도 나열"  />
+<meta name="description" content="이페이지의 정보를 설명할 수 있는 문장 2개정도 여기에 작성" />
+<title>사이트를 대표하는키워드</title>
+<style>
+	#sp1Img,
+	#sp2Img{
+		border : 2px solid #000000;
+	}
+	#sp1Img img,
+	#sp2Img img{
+		width : 150px;
+		height : 200px;
+		border : 1px solid #333333;
+		margin-left : 10px;
+	}
+</style>
+</head>
+<body>
+	<div id="container">
+		<h1>이미지 표현하기</h1>
+		<div id="sangpum1">
+			<h2>전자 상품</h2>
+			<div id="sp1Img">
+				<img src="aaaa.jpg" alt="" title="" />
+				
+				<!-- 실제로는 위에 img태그는 존재하지 않는다. 자바스크립트가 만들어서 추가한다.  -->
+			</div>
+		</div>
+		<hr />
+		<div id="sangpum2">
+			<h2>의류 상품</h2>
+			<div id="sp2Img">
+				<img src="aaaa.jpg" alt="" title="" />
+				
+			</div>
+		</div>
+	</div>
+	<script>
+		// 아래의 imgFileString 상자의 문자열은 서버에서 전달된 파일 목록의 문자열이다.
+		var imgFileString = `ex01_sp1_aaa1.jpg ex01_sp1_aaa2.jpg ex01_sp1_aaa3.jpg 
+ex01_sp2_bbb1.jpg ex01_sp2_bbb2.jpg ex01_sp2_bbb3.jpg ex01_sp2_bbb4.jpg`;
+		
+		
+		var imgFileList = imgFileString.split(' ');
+		
+		console.log('이미지 파일의 개수 : ' + imgFileList.length );
+		
+		var sp1ImgCount = 0; // 각각의 영역에 들어갈 이미지의 개수를 세기위한 변수
+		var sp2ImgCount = 0;
+		var sp1ImgHTML = "";
+		var sp2ImgHTML = "";
+		
+		for(var i = 0; i < imgFileList.length; i++){
+			if (imgFileList[i].startsWith("ex01_sp1_") ){
+				sp1ImgCount++;
+				// 필요한 이미지 태그를 만든다.... => 위에 예제에서는 3개의 이미지 태그가 문자열로 만들어진다.
+				sp1ImgHTML += ('<img src="'+imgFileList[i]+'" alt="" title="" />');
+			}else{
+				sp2ImgCount += 1;
+				// 필요한 이미지 태그를 만든다.... => 위에 예제에서는 5개의 이미지 태그가 문자열로 만들어진다.
+				sp2ImgHTML += ('<img src="'+imgFileList[i]+'" alt="" title="" />');
+			}
+		}
+		
+		console.log("전자 상품 이미지 상자에 들어갈 이미지 개수 : " + sp1ImgCount );
+		console.log("=====전자 상품 이미지 태그" + sp1ImgHTML);
+		console.log("의류 상품 이미지 상자에 들어갈 이미지 개수 : " + sp2ImgCount );
+		console.log("*****의류 상품 이미지 태그" + sp2ImgHTML);
+		
+		// 아래의 내용은 파일의 내용을 읽어서 필요한 위치에 필요한 파일을 HTML문서에 추가하기
+		var insertBox1 = document.getElementById("sp1Img");
+		var insertBox2 = document.getElementById("sp2Img");
+		console.log("선택된 상자 내용 : " + insertBox1.innerHTML );
+		insertBox1.innerHTML = sp1ImgHTML;
+		insertBox2.innerHTML = sp2ImgHTML;
+	
+		
+		</script>
+</body>
+</html>

@@ -1,0 +1,186 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="이부분은 현재페이지의 가장 중요한 키워드8개 정도 나열"  />
+<meta name="description" content="이페이지의 정보를 설명할 수 있는 문장 2개정도 여기에 작성" />
+<title>사이트를 대표하는키워드</title>
+</head>
+<body>
+  <form name=fom>
+
+    <fieldset>
+
+      <legend>회원가입</legend>
+
+      <table>
+
+<tr>
+
+<td>ID</td>
+
+<td><input type="text" id="id" name="id"></td>
+
+</tr>
+
+<tr>
+
+<td>PW<br>확인
+
+</td>
+
+<td><input type="password" id="pw1" name="pw1"><br>
+
+<input type="password" id="pw2" name="pw2">
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>성별</td>
+
+<td>
+
+  <input type="radio" value="male" name="gender"class="gender">남 
+
+  <input type="radio" value="female" name="gender" class="gender">여
+
+</td>
+
+</tr>
+
+<tr>
+
+<td>취미</td>
+
+<td>
+
+  <input type="checkbox" value="sport" name="hobby" class="hobby">운동 
+
+  <input type="checkbox" value="trip" name="hobby" class="hobby">여행 
+
+  <input type="checkbox"value="read" name="hobby" class="hobby">독서</td>
+
+</tr>
+
+<tr>
+
+<td>생일</td>
+
+<td><input type="date" id="birth" name="birth"></td>
+
+</tr>
+
+<tr>
+
+<td>나이</td>
+
+<td><input type="text" id="age" name="age"></td>
+
+</tr>
+
+<tr>
+
+<td>이메일</td>
+
+<td><input type="text" id="email" name="email"> @ <select
+
+id="url">
+
+<option>naver.com</option>
+
+<option>daum.net</option>
+
+<option>nate.com</option>
+
+<option>gmail.com</option>
+
+</select></td>
+
+</tr>
+
+<tr>
+
+<td>메모</td>
+
+<td><textarea id="memo" rows="3" cols="50"></textarea></td>
+
+</tr>
+
+<tr>
+
+<td colspan="2">
+
+<input type="button" id="signup"value="signup"> <input type="reset" value="reset">
+
+</td>
+
+</tr>
+
+      </table>
+
+    </fieldset>
+
+  </form>
+
+  <script>
+
+  let numList = [1,12 ,73,4,5,6,7,8,9,10, 33, 25, 14];
+
+  numList.sort( (a, b) => a-b );
+
+  console.log( '정렬 결과 => ',numList  );
+
+​
+
+  let oddArray = numList.filter( e => e%2 );
+
+  console.log( '홀수 배열 => ',oddArray  );
+
+​
+
+  let evenArraySum = numList.filter( e => !(e % 2 ) ).reduce( (a, b ) => a + b );
+
+  console.log( '짝수 요소의 합 =>', evenArraySum );
+
+​
+
+console.log('========================================');
+
+​
+
+ let fileList = [ 'main_aaa.jpg', 'main_bbb.jpg', 'main_ccc.png', 'main_ddd.gif', 
+
+'sub_aaa.jpg', 'sub_bbb.jpg', 'sub_ccc.png', 'sub_ddd.gif'];
+
+​
+
+ let mainList = fileList.filter( ele => ele.startsWith('main') );
+
+ console.log( '메인 이미지 목록 =>',mainList );
+
+​
+
+ let subList = fileList.filter( ele => ele.startsWith('sub') );
+
+ console.log( '서브 이미지 목록 =>',subList );
+
+ 
+
+ let setData = new Set( mainList.map( e => e.substring( e.indexOf('.')+1 ) )   );
+
+ let duplicateFilterArr = Array.from( setData );
+
+ for( str of duplicateFilterArr ){
+
+    console.log( str , " : ",  mainList.filter( e => e.endsWith( str ) ).length );
+
+ }
+
+  </script>
+</body>
+</html>

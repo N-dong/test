@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="이부분은 현재페이지의 가장 중요한 키워드8개 정도 나열"  />
+<meta name="description" content="이페이지의 정보를 설명할 수 있는 문장 2개정도 여기에 작성" />
+<title>사이트를 대표하는키워드</title>
+<style>
+	form div{
+		display : inline-block;
+		width : 90px;
+		border : 1px solid red;
+		border-radius: 5px;
+		text-align: center;
+	}
+</style>
+</head>
+<body>
+	<div id="container">
+		<form action="reData.jsp" method="get">
+			<fieldset>
+				<legend>필수입력</legend>
+				<input type="text" name= "irum" placeholder="이름을 입력해주세요" required="required" value="1234"/><br />
+				<input type="text" name= "address" placeholder="주소를 입력해주세요"/>
+			</fieldset>
+			<fieldset>
+				<legend>선택사항</legend>
+				<fieldset>
+					<legend>취미</legend>
+					<label for="sports">스포츠</label><input type="checkbox" id="sports" name="hobby" value="sports" />&nbsp;&nbsp;&nbsp;
+					<label for="movie">영화</label><input type="checkbox" id="movie" name="hobby" value="movie" />&nbsp;&nbsp;&nbsp;
+					<label for="music">음악</label><input type="checkbox" id="music" name="hobby" value="music" />&nbsp;&nbsp;&nbsp;
+					<label for="dance">댄스</label><input type="checkbox" id="dance" name="hobby" value="dance" />
+				</fieldset>
+				
+				<fieldset>
+					<legend>radio 입력 타입 실습</legend>
+					<label for="Man">남</label><input type="radio" id="Man" name="gen" value="Man" checked="checked"/>&nbsp;&nbsp;&nbsp;
+					<label for="Woman">여</label><input type= "radio" id="Woman" name="gen" value="Woman" />&nbsp;&nbsp;&nbsp;
+					
+					
+				</fieldset>
+				
+				<fieldset>
+					<legend>select를 이용한 하나의 자료 전달</legend>
+					<select name="likeList" multiple="multiple">
+						<option value="program">프로그램 개발</option>
+						<option value="design">디자인 개발</option>
+						<option value="html">웹문서 작성</option>
+						<option value="css">웹 스타일</option>
+						<option value="javascript">front 개발</option>
+					</select>
+				</fieldset>
+			</fieldset>
+				
+
+			<!-- <input type="submit" value="자료전송" /> -->
+				<button type="submit">회원가입</button>
+			<!-- <div>자료전달</div> <= 자바스크립트의 전달기능과 연동해서 사용
+			자료 전송 및 취소에 대해서는 다양한 방법으로 작성할 수 있다.
+			--> 
+			
+
+			<input type="reset" value="입력취소" />
+			
+			
+			
+		</form>
+	</div>
+</body>
+</html>

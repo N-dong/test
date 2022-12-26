@@ -1,0 +1,130 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="이부분은 현재페이지의 가장 중요한 키워드8개 정도 나열" />
+<meta name="description" content="이페이지의 정보를 설명할 수 있는 문장 2개정도 여기에 작성" />
+<title>사이트를 대표하는키워드</title>
+<style>
+* {
+	margin: 0 auto;
+}
+
+.container {
+	background-color: lightgray;
+	width: 400px;
+	margin: 0 auto;
+}
+
+fieldset{
+	margin: 10px;
+	background : white;
+}
+
+input {
+	border: none;
+	border-bottom: 1px solid black;
+	margin-bottom: 10px;
+
+}
+
+#main button {
+	background-color: blue;
+	border: none;
+	color: white;
+	font-size: 16px;
+	margin: 4px 2px;
+	width: 100%;
+	height: 50px;
+	cursor: pointer;
+}
+
+.secondFo input[ name="day"]::placeholder {
+	text-align: center;
+	}
+
+.firstFo input{
+	width: 100%;
+}
+
+.secondFo input[ name="irum"]{
+	width:100%;
+	}
+	
+.secondFo button{
+	width : 48%;
+}
+.thirdFo button{
+	width : 20%;
+}
+
+.thirdFo input[ name="checkNum"]{
+	width: 77%;
+}
+
+select {
+	width : 20%;
+}
+
+.thirdFo input[ name="phone"]{
+	width: 55%;
+}
+
+p{
+	font-size: 10px;
+}
+
+
+</style>
+</head>
+<body>
+	<div class="container">
+		<div id="main">
+			<button>회원정보 입력</button>
+		</div>
+		<fieldset>
+			<form class="coform firstFo">
+				<input type="text" name="id" placeholder="아이디" required="required" /><br />
+				<input type="password" name="password" placeholder="비밀번호"
+					required="required" /><br /> <input type="password" 
+					name="password" placeholder="비밀번호 확인" required="required" />
+			</form>
+		</fieldset>
+
+		<form class="coform secondFo">
+			<fieldset>
+				<input type="text" name="irum" placeholder="이름" required="required"/><br /> 
+				<input type="text" name="year" placeholder="생년(YYYY)"
+					required="required" size="7"/> <input type="text" name="month"
+					placeholder="월(MM)" required="required" size="3"/><br />
+					 <input type="number" name="day" placeholder="일(DD)" required="required" /><br />
+				<button>남자</button>
+				<button>여자</button>
+			</fieldset>
+		</form>
+
+		<form class="coform thirdFo">
+			<fieldset>
+				<select name="number">
+					<option value="">010</option>
+					<option value="011">011</option>
+					<option value="032">032</option>
+				</select> <input type="number" name="phone" placeholder="휴대전화" />
+				<button>인증</button>
+				<input type="number" name="checkNum"placeholder="인증번호(6자리)" />
+				<button>확인</button>
+				<input type="text" placeholder="이메일 ID" />@ <input type="text" />
+				<p>ID,PW 찾기 본인확인 수단</p>
+			</fieldset>
+		</form>
+
+
+		<div id="main">
+			<button>가입하기</button>
+		</div>
+	</div>
+
+</body>
+</html>

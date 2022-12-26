@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="이부분은 현재페이지의 가장 중요한 키워드8개 정도 나열"  />
+<meta name="description" content="이페이지의 정보를 설명할 수 있는 문장 2개정도 여기에 작성" />
+<title>사이트를 대표하는키워드</title>
+<style>
+	table, td,th{
+		border : 1px solid black;
+		border-collapse: collapse;
+	}
+	.column{
+		width : 100px;
+		height : 20px;
+		border : 1px solid black;
+		margin : 0px;
+		display : inline-block;
+	}
+</style>
+
+</head>
+<body>
+	<div id="container">
+		<p>테이블 셀 합치기</p>
+		<table>
+			<tr>
+				<td>이름</td>
+				<td>홍길동</td>
+				<td>연락처</td>
+				<td>핸드폰 010545786586</td>
+			</tr>
+			<tr>
+				<td>주소</td>
+				<td colspan="3"></td>
+				
+			</tr>
+			<tr>
+				<td>자기소개</td>
+				<td colspan="3"></td>
+				
+			</tr>
+		</table>
+		
+		<hr />
+		<table>
+			<tr>
+				<td>내용1</td>
+				<td>내용2</td>
+				<td colspan= "2"> </td>
+				
+			</tr>
+			<tr>
+				<td>내용1</td>
+				<td>내용2</td>
+				<td>내용3</td>
+				<td>내용4</td>
+			</tr>
+			<tr>
+				<td>내용1</td>
+				<td rowspan = "2"></td>
+				<td>내용3</td>
+				<td>내용4</td>
+			</tr>
+			<tr>
+				<td>내용1</td>
+				<td rowspan = "2" colspan= "2"></td>
+				
+			</tr>
+			<tr>
+				<td>내용1</td>
+				<td>내용2</td>
+				
+			</tr>
+		</table>
+		
+		<hr /><hr />
+		<figure>
+		<figcaption> 20003년도 입학 상태표</figcaption>
+		<table>
+			<tr>
+				<td>111111</td>
+				<td>111111</td>
+			</tr>
+			<tr>
+				<td>111111</td>
+				<td>111111</td>
+			</tr>
+			<tr>
+				<td>111111</td>
+				<td>111111</td>
+			</tr>
+		</table>
+		
+	</figure>
+	<hr />
+	<hr />
+	<figure>
+		<img src="https://dummyimage.com/300x200" alt="" />
+		<br />
+		<figcaption>2020년 카페행사 어쩌구 저쩌구 이미지</figcaption>
+	</figure>
+
+
+</div>
+	
+</body>
+</html>

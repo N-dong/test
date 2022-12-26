@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="keywords" content="이부분은 현재페이지의 가장 중요한 키워드8개 정도 나열"  />
+<meta name="description" content="이페이지의 정보를 설명할 수 있는 문장 2개정도 여기에 작성" />
+<title>사이트를 대표하는키워드</title>
+<style>
+	
+	.imgContainer{
+		border : 2px solid #FF0000;
+		padding : 10px;
+	}
+	.imgContainer img{
+		width : 150px;
+		height : 200px;
+		border : 1px solid #333333;
+		margin : 10px;
+	}
+	.donggeon{
+		margin : 0;
+		border : 1px solid red;
+	}
+</style>
+</head>
+<body>
+	<div id="container">
+		<h1>이미지 표현하기</h1>
+		<div id="sangpum1">
+			<h2>전자 상품</h2>
+			<div id="sp1Img" class= "imgContainer">
+			</div>
+		</div>
+		<hr />
+		<div id="sangpum2">
+			<h2>의류 상품</h2>
+			<div id="sp2Img" class= "imgContainer">
+			</div>
+		</div>
+		<hr />
+		<img src="ex01_sp1_aaa1.jpg" class= "donggeon" />  
+		<img src="ex01_sp1_aaa1.jpg" class="donggeon" />
+	
+	</div>
+	<script>
+		// 아래의 문자열은 서버에서 전달된 파일 목록의 문자열이다.
+		var imgFileList = `ex01_sp1_aaa1.jpg ex01_sp1_aaa2.jpg ex01_sp1_aaa3.jpg ex01_sp2_bbb1.jpg ex01_sp2_bbb2.jpg ex01_sp2_bbb3.jpg ex01_sp2_bbb4.jpg `.split(' ');
+		var imgAltList = "냉장고 1 이미지, 냉장고 2 이미지, 냉장고 3 이미지, 의류 1 이미지 , 의류 2 이미지 , 의류 3 이미지 , 의류 4 이미지 , 의류 5 이미지 ".split(', '); 
+		var imgTitleList = "냉장고 1 툴팁내용, 냉장고 2 툴팁내용, 냉장고 3 툴팁내용, 의류 1 툴팁내용 , 의류 2 툴팁내용 , 의류 3 툴팁내용 , 의류 4 툴팁내용 , 의류 5 툴팁내용 ".split(', ');
+		// 이미지를 추가하기 위해서 HTML img태그의 필수속성 및 준 필수속성(src)및 준 필수속성(alt, title)에 들어갈 자료를 각각의 변수에 저장하였다.
+		// => 최종적으로는 객체에 하나의 이미지 정보에 필요한 src와 alt와 title.....것 들을 묶어 담은 후에 각각의 이미지 개수만큼 생성한다.
+		// 예시 => [ {src : "ex01_sp1_aaa1.jpg", alt : "냉장고 1 이미지", title : "냉장고 1 툴팁내용" }, {src : "ex01_sp1_aaa2.jpg", alt : "냉장고 2 이미지", title : "냉장고 2 툴팁내용"},......{} ]
+		var sp1ImgHTML = "";
+		var sp2ImgHTML = "";
+		
+		for(var i = 0; i < imgFileList.length; i++){
+			if ( imgFileList[i].startsWith("ex01_sp1_") ){
+				
+				sp1ImgHTML += ('<img src="'+imgFileList[i]+'" alt="'+ imgAltList[i]+'" title="'+ imgTitleList[i]+'" />');
+			}else{
+				
+				sp2ImgHTML += ('<img src="'+imgFileList[i]+'" alt="'+ imgAltList[i]+'" title="'+ imgTitleList[i]+'" />');
+			}
+		}
+		
+		
+
+		// 아래의 내용은 파일의 내용을 읽어서 필요한 위치에 필요한 파일을 HTML문서에 추가하기
+		document.getElementById("sp1Img").innerHTML = sp1ImgHTML;
+		document.getElementById("sp2Img").innerHTML = sp2ImgHTML;
+	
+		
+		</script>
+</body>
+</html>
